@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+{% include 'material/includes/material_css.html' %}
+{% include 'material/includes/material_js.html' %}
+import material design
+{% load widget_tweaks %}
+{% block content %}
+<div><img style="margin-left: 500px" height="300"; width="400"  src="{{ domain }}/images/lordlike_photo.jpeg" alt=""></div>
+
+    <div class="row">
+    <div class="container">
+        <div class="col-md-12">
+            <h4>Connect wallet</h4>
+                <button id='loginButton' onclick="" class="mx-auto rounded-md p-2 bg-purple-500 text-white">
+                      Login with MetaMask
+                </button>
+            <hr>
+        </div>
+        <div class="col-md-12">
+            <h4>Create text transaction</h4>
+            <br>
+            <form class="select2-selection--multiple">
+                <div class="row">
+                    <div class="col-md-12">
+                <input id="data" class="form_input" type="text" name="data">
+                    </div>
+                <div class="col-md-12">
+                    <br>
+                <button type="button" class="sendEthButton btn">Send</button>
+                    </div>
+                    </div>
+            </form>
+            <br>
+
+        </div>
+    </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+
+<script>
+function ascii_to_hexa(str)
+  {
+ var arr1 = [];
+ for (var n = 0, l = str.length; n < l; n ++)
+     {
+  var hex = Number(str.charCodeAt(n)).toString(16);
+  arr1.push(hex);
+  }
+ return arr1.join('');
+   }
+
+
+
+    const sendEthButton = document.querySelector('.sendEthButton');
+window.userWalletAddress = null
+    const loginButton = document.getElementById('loginButton')
+    const userWallet = document.getElementById('user_wallet_address')
+
+    function toggleButton() {
+      if (!window.ethereum) {
+        loginButton.innerText = 'MetaMask is not installed'
+        loginButton.classList.remove('bg-purple-500', 'text-white')
+        loginButton.classList.add('bg-gray-500', 'text-gray-100', 'cursor-not-allowed')
+        return false
+      }
+
+      loginButton.addEventListener('click', loginWithMetaMask)
+    }
+
+    async function loginWithMetaMask() {
+      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+        .catch((e) => {
+          console.error(e.message)
+          return
+        })
+      if (!accounts) { return }
+console.log(window.ethereum)
+      window.userWalletAddress = accounts[0]
+        console.log(accounts[0])
+        localStorage.setItem('myAccount', accounts[0]);
+      let test = localStorage.getItem('myAccount')
+        console.log(test)
+      userWallet.value = window.userWalletAddress
+      loginButton.innerText = 'Sign out of MetaMask'
+
+
+      loginButton.removeEventListener('click', loginWithMetaMask)
+      setTimeout(() => {
+        loginButton.addEventListener('click', signOutOfMetaMask)
+      }, 200)
+        let xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://127.0.0.1:8000/blog/create/user/wallet/address/");
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onload = () => console.log(xhr.responseText);
+    let data = JSON.stringify({
+      "user_wallet_address": window.userWalletAddress,
+    });
+    console.log(userWalletAddress)
+    xhr.send(data);
+    }
+
+    function signOutOfMetaMask() {
+      window.userWalletAddress = null
+      userWallet.innerText = ''
+      loginButton.innerText = 'Sign in with MetaMask'
+
+      loginButton.removeEventListener('click', signOutOfMetaMask)
+      setTimeout(() => {
+        loginButton.addEventListener('click', loginWithMetaMask)
+      }, 200)
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      toggleButton()
+    });
+
+
+//------------------------------------------------------------------------------
+
+//Sending Ethereum to an address
+sendEthButton.addEventListener('click', () => {
+        var data_form = document.getElementById('data').value
+  ethereum
+    .request({
+      method: 'eth_sendTransaction',
+      params: [
+        {
+          from: localStorage.getItem('myAccount'),
+          to: localStorage.getItem('myAccount'),
+          data: ascii_to_hexa(data_form),
+        },
+      ],
+    })
+    .then((txHash) => {
+        console.log(txHash);
+        console.log('result');
+
+    let xhr2 = new XMLHttpRequest();
+    xhr2.open("POST", "http://127.0.0.1:8000/blog/create/data/");
+    xhr2.setRequestHeader("Accept", "application/json");
+    xhr2.setRequestHeader("Content-Type", "application/json");
+    xhr2.onload = () => console.log(xhr2.responseText);
+    let data2 = JSON.stringify({
+        "res_hash": txHash,
+        "account": localStorage.getItem('myAccount'),
+    });
+    xhr2.send(data2);
+    })
+
+});
+
+ethereumButton.addEventListener('click', () => {
+  getAccount();
+});
+
+async function getAccount() {
+  accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+}
+</script>
+
+
+
+{%endblock%}
