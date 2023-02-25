@@ -1,2 +1,19 @@
-# eth.truth_mashine
-Truth machine - A system for bitcoin and ethereum blockchain text writing and reading, as well as verification and escrow using decentralized blockchain and IPFS technologies. 
+LordLike is Decentralized Internet Organization. 
+
+Our mission is to serve as a source of knowledge and utilities in web 3.0 - the new era of the internet with more decentralized and smart experience. 
+
+🔑 Participate in governance, join the LordLike DAO.
+
+☀️ Information on the following topics will be published here by tags:
+
+#author
+#crypto
+#blockchain
+#token
+#dao
+#nft
+#defi
+#ai
+#semantics
+#metaverse
+#wotd
