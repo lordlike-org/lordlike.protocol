@@ -1,73 +1,57 @@
 {% load static %}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ CSS_URL }}/static/css/styles/main_styles.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Base</title>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+            integrity="sha384-2dBLmlm+I9znzyp+5mRuDIitD5f5j8y5Gqqy+ILnc/RMAH/+P26RsXGNCbMCa0K2"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+            crossorigin="anonymous"></script>
 
-<!--	<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.4-rc.1/web3.min.js"></script>-->
+    <!-- Font Awesome -->
+    <link href="{{ CSS_URL }}/static/css/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-	<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-
-
-	<link href="{{ CSS_URL }}/static/css/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ CSS_URL }}/static/css/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="{{ CSS_URL }}/static/css/styles/bootstrap4/bootstrap.min.css">
-    <link href="{{ CSS_URL }}/static/css/styles/main_styles.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ CSS_URL }}/static/css/responsive.css">
-
-	<script src="{{ JS_URL }}/static/js/jquery-3.2.1.min.js"></script>
-    <script src="{{ JS_URL }}/static/js/popper.js"></script>
-    <script src="{{ JS_URL }}/static/js/bootstrap.min.js"></script>
-    <script src="{{ JS_URL }}/static/js/owl.carousel.js"></script>
-    <script src="{{ JS_URL }}/static/js/easing.js"></script>
-    <script src="{{ JS_URL }}/static/js/custom.js"></script>
-    <script src="{{ JS_URL }}/static/js/main.js"></script>
-
-
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/css/bootstrap-select.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/js/bootstrap-select.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
 </head>
 <body>
-<header class="header" style="margin-bottom: 20px">
+<header class="header">
 
-	<!-- Top Bar -->
-	<div class="top_bar">
-		<div class="top_bar_container">
-			<div class="container">
-				<div class="row">
-					<div class="col">
-						<div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
-							<div class="top_bar_right ml-auto">
-
-
-								<!-- Social -->
-								<div class="top_bar_social">
-									<span style="color: rgba(97,0,255,0.5)" class="top_bar_title social_title">follow us</span>
-									<ul>
-										<li><a href="{{index.facebook}}" target="_blank"><i style="color: rgba(255,176,92,0.5)" href="{{index.facebook}}" class="fa fa-facebook" aria-hidden="true"></i></a></li>
-										<li><a href="{{index.instagram}}" target="_blank"><i style="color: rgba(255,176,92,0.5)" class="fa fa-instagram" aria-hidden="true"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <!-- Top Bar -->
+    <div class="top_bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
+                        <div class="top_bar_social">
+                            <span class="top_bar_title">Follow Us:</span>
+                            <ul class="list-unstyled mb-0">
+                                <li><a href="{{index.facebook}}" target="_blank"><i class="fa fa-facebook"
+                                                                                      aria-hidden="true"></i></a></li>
+                                <li><a href="{{index.instagram}}" target="_blank"><i class="fa fa-instagram"
+                                                                                       aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 	<!-- Header Content -->
 	<div class="header_container">
@@ -83,9 +67,9 @@
 						<nav class="main_nav_contaner" >
 							<ul class="main_nav">
 
-								<li class="active"><a style="color: rgba(97,0,255,0.5)" href="{% url 'protocol:home' %}">Home</a></li>
-								<li><a style="color: rgba(97,0,255,0.5)" href="https://t.me/lordlike">Blog</a></li>
-								<li><a style="color: rgba(97,0,255,0.5)" href=123>About</a></li>
+								<li class="active"><a style="color: rgba(5,5,5,0.99)" href="{% url 'protocol:home' %}">Home</a></li>
+								<li><a style="color: rgba(5,5,5,0.99)" href="https://t.me/lordlike">Blog</a></li>
+								<li><a style="color: rgba(5,5,5,0.99)" href=123>About</a></li>
 
 
 

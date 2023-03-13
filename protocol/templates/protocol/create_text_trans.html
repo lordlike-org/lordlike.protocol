@@ -1,45 +1,40 @@
 {% extends 'base.html' %}
-{% include 'material/includes/material_css.html' %}
-{% include 'material/includes/material_js.html' %}
-import material design
-{% load widget_tweaks %}
+
 {% block content %}
-<div><img style="margin-left: 500px" height="300"; width="400"  src="{{ domain }}/images/lordlike_photo.jpeg" alt=""></div>
 
-    <div class="row">
-    <div class="container">
-        <div class="col-md-12">
-            <h4>Connect wallet</h4>
-                <button id='loginButton' onclick="" class="mx-auto rounded-md p-2 bg-purple-500 text-white">
-                      Login with MetaMask
-                </button>
+<div class="container" style="max-width: 800px;">
+  <div class="row">
+    <div class="col s12 m8 offset-m2">
+      <div class="card">
+        <div class="card-content">
             <hr>
+            <hr>
+            <hr>
+          <div class="row">
+            <div class="col s12 center-align mb-4">
+              <button id="loginButton" onclick="" class="btn btn-primary">Login with MetaMask</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <h4 style="font-size: medium">Create text transaction</h4>
+              <hr>
+              <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="data">Text</label>
+                  <input id="data" class="form-control" type="text" name="data">
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+              </form>
+            </div>
+          </div>
         </div>
-        <div class="col-md-12">
-            <h4>Create text transaction</h4>
-            <br>
-            <form class="select2-selection--multiple">
-                <div class="row">
-                    <div class="col-md-12">
-                <input id="data" class="form_input" type="text" name="data">
-                    </div>
-                <div class="col-md-12">
-                    <br>
-                <button type="button" class="sendEthButton btn">Send</button>
-                    </div>
-                    </div>
-            </form>
-            <br>
-
-        </div>
+      </div>
     </div>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
+  </div>
+</div>
+{% include 'material/includes/material_js.html' %}
 
 <script>
 function ascii_to_hexa(str)
