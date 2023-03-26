@@ -25,7 +25,7 @@
                   <label for="data">Text</label>
                   <input id="data" class="form-control" type="text" name="data">
                 </div>
-                <button type="submit" class="btn btn-primary">Send</button>
+                <button type="button" class="sendEthButton btn">Send</button>
               </form>
             </div>
           </div>
@@ -145,8 +145,25 @@ sendEthButton.addEventListener('click', () => {
         "account": localStorage.getItem('myAccount'),
     });
     xhr2.send(data2);
-    })
+    const alertBox = document.createElement('div');
+      alertBox.classList.add('alert');
 
+      // Add the message
+      const message = document.createElement('p');
+      message.textContent = 'Transaction hash: ' + txHash;
+      alertBox.appendChild(message);
+
+      // Add the copy button
+      const copyButton = document.createElement('button');
+      copyButton.textContent = 'Copy';
+      copyButton.addEventListener('click', () => {
+        navigator.clipboard.writeText(txHash);
+      });
+      alertBox.appendChild(copyButton);
+
+      // Show the alert box
+      document.body.appendChild(alertBox);
+    })
 });
 
 ethereumButton.addEventListener('click', () => {
@@ -157,6 +174,7 @@ async function getAccount() {
   accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 }
 </script>
+
 
 
 
