@@ -18,13 +18,11 @@
               {{form.file|add_class:'form-control'}}
             </div>
             <hr>
-            <div class="text-center">
-              <button type="submit" class="btn btn-outline-primary">Create</button>
-            </div>
-            <hr>
+
             <div class="form-group">
               <label for="text" style="color: #2B333F;"><h4>Text</h4></label>
               <input id="text" class="form-control" type="text" name="text">
+              <span id="charCounter" style="display: block; margin-top: 4px;"></span>
             </div>
             <hr>
             <div class="form-group">
@@ -32,6 +30,13 @@
               <h3 id="hash_ipfs" class="mb-0">{{ data_url }}</h3>
             </div>
             <hr>
+            <div class="text-center">
+              <button type="submit" class="btn btn-outline-primary">Create</button>
+            </div>
+            <hr>
+            <div class="form-group">
+                  <div id="recaptcha" class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+                </div>
           </form>
           <hr>
           <div class="text-center">
@@ -43,124 +48,193 @@
     </div>
   </div>
 </div>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <script>
-function ascii_to_hexa(str)
-  {
- var arr1 = [];
- for (var n = 0, l = str.length; n < l; n ++)
-     {
-  var hex = Number(str.charCodeAt(n)).toString(16);
-  arr1.push(hex);
+function ascii_to_hexa(str) {
+  var arr1 = [];
+  for (var n = 0, l = str.length; n < l; n++) {
+    var hex = Number(str.charCodeAt(n)).toString(16);
+    arr1.push(hex);
   }
- return arr1.join('');
-   }
+  return arr1.join('');
+}
 
+const maxDataSize = 50000;
 
+function checkDataSize(text) {
+  const dataSize = new Blob([text], { type: 'text/plain' }).size;
+  if (dataSize > maxDataSize) {
+    return dataSize - maxDataSize;
+  }
+  return 0;
+}
 
-    const sendEthButton = document.querySelector('.sendEthButton');
-window.userWalletAddress = null
-    const loginButton = document.getElementById('loginButton')
-    const userWallet = document.getElementById('user_wallet_address')
+const sendEthButton = document.querySelector('.sendEthButton');
+window.userWalletAddress = null;
+const loginButton = document.getElementById('loginButton');
+const userWallet = document.getElementById('user_wallet_address');
 
-    function toggleButton() {
-      if (!window.ethereum) {
-        loginButton.innerText = 'MetaMask is not installed'
-        loginButton.classList.remove('bg-purple-500', 'text-white')
-        loginButton.classList.add('bg-gray-500', 'text-gray-100', 'cursor-not-allowed')
-        return false
-      }
+function toggleButton() {
+  if (!window.ethereum) {
+    loginButton.innerText = 'MetaMask is not installed';
+    loginButton.classList.remove('bg-purple-500', 'text-white');
+    loginButton.classList.add('bg-gray-500', 'text-gray-100', 'cursor-not-allowed');
+    return false;
+  }
 
-      loginButton.addEventListener('click', loginWithMetaMask)
-    }
+  loginButton.addEventListener('click', loginWithMetaMask);
+}
 
-    async function loginWithMetaMask() {
-      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
-        .catch((e) => {
-          console.error(e.message)
-          return
-        })
-      if (!accounts) { return }
-console.log(window.ethereum)
-      window.userWalletAddress = accounts[0]
-        console.log(accounts[0])
-        localStorage.setItem('myAccount', accounts[0]);
-      let test = localStorage.getItem('myAccount')
-        console.log(test)
-      userWallet.value = window.userWalletAddress
-      loginButton.innerText = 'Sign out of MetaMask'
+async function loginWithMetaMask() {
+  const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+    .catch((e) => {
+      console.error(e.message);
+      return;
+    });
+  if (!accounts) { return; }
+  console.log(window.ethereum);
+  window.userWalletAddress = accounts[0];
+  console.log(accounts[0]);
+  localStorage.setItem('myAccount', accounts[0]);
+  let test = localStorage.getItem('myAccount');
+  console.log(test);
+  userWallet.value = window.userWalletAddress;
+  loginButton.innerText = 'Sign out of MetaMask';
+  loginButton.removeEventListener('click', loginWithMetaMask);
+  setTimeout(() => {
+    loginButton.addEventListener('click', signOutOfMetaMask);
+  }, 200);
 
-
-      loginButton.removeEventListener('click', loginWithMetaMask)
-      setTimeout(() => {
-        loginButton.addEventListener('click', signOutOfMetaMask)
-      }, 200)
-        let xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://127.0.0.1:8000/blog/create/user/wallet/address/");
-    xhr.setRequestHeader("Accept", "application/json");
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.onload = () => console.log(xhr.responseText);
-    let data = JSON.stringify({
+  const response = await fetch(`${window.location.origin}/blog/create/user/wallet/address/`, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
       "user_wallet_address": window.userWalletAddress,
-    });
-    console.log(userWalletAddress)
-    xhr.send(data);
+    }),
+  });
+
+  const responseData = await response.json();
+  console.log(responseData);
+}
+
+function signOutOfMetaMask() {
+  window.userWalletAddress = null;
+  userWallet.innerText = '';
+  loginButton.innerText = 'Sign in with MetaMask';
+  loginButton.removeEventListener('click', signOutOfMetaMask);
+  setTimeout(() => {
+    loginButton.addEventListener('click', loginWithMetaMask);
+  }, 200);
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  toggleButton();
+});
+
+
+function isValidData(text) {
+  const regex = /[^a-zA-Z0-9\s]/;
+  if (regex.test(text)) {
+    return false;
+  }
+  const maliciousLinks = [
+    'http://malicious.example.com',
+    'https://malicious.example.com',
+  ];
+  for (const maliciousLink of maliciousLinks) {
+    if (text.includes(maliciousLink)) {
+      return false;
     }
+  }
+  return true;
+}
 
-    function signOutOfMetaMask() {
-      window.userWalletAddress = null
-      userWallet.innerText = ''
-      loginButton.innerText = 'Sign in with MetaMask'
+sendEthButton.addEventListener('click', async () => {
+  var data_url = document.getElementById('hash_ipfs').textContent;
+  var data_form = document.getElementById('text').value;
 
-      loginButton.removeEventListener('click', signOutOfMetaMask)
-      setTimeout(() => {
-        loginButton.addEventListener('click', loginWithMetaMask)
-      }, 200)
-    }
+  if (!isValidData(data_form)) {
+    alert('Invalid data.');
+    return;
+  }
 
-    window.addEventListener('DOMContentLoaded', () => {
-      toggleButton()
-    });
+  const excessDataSize = checkDataSize(data_form);
+  if (excessDataSize > 0) {
+    alert(`Data size exceeds the limit by ${excessDataSize} bytes.`);
+    return;
+  }
 
-
-//Sending Ethereum to an address
-sendEthButton.addEventListener('click', () => {
-    var data_url = document.getElementById('hash_ipfs').textContent
-    var data_form = document.getElementById('text').value
-  ethereum
-    .request({
+  try {
+    const txResponse = await ethereum.request({
       method: 'eth_sendTransaction',
       params: [
         {
           from: localStorage.getItem('myAccount'),
           to: localStorage.getItem('myAccount'),
-          data: ascii_to_hexa(data_form + " " + data_url),
+          data: '0x' + ascii_to_hexa(data_form + " " + data_url),
         },
       ],
-    })
-    .then((txHash) => {
-        console.log(txHash);
-        console.log('result');
-        let xhr2 = new XMLHttpRequest();
-    xhr2.open("POST", "http://127.0.0.1:8000/blog/create/ipfs/data/");
-    xhr2.setRequestHeader("Accept", "application/json");
-    xhr2.setRequestHeader("Content-Type", "application/json");
-    xhr2.onload = () => console.log(xhr2.responseText);
-    let data2 = JSON.stringify({
-        "result_hash": txHash,
-        "account": String(localStorage.getItem('myAccount')),
     });
-    xhr2.send(data2);
-    })
-});
 
+    const txHash = txResponse.result;
+    console.log(txHash);
 
-ethereumButton.addEventListener('click', () => {
-  getAccount();
+    const response2 = await fetch(`${window.location.origin}/blog/create/ipfs/data/`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        "res_hash": txHash,
+        "account": localStorage.getItem('myAccount'),
+      }),
+    });
+
+    const responseData2 = await response2.json();
+    console.log(responseData2);
+
+    const alertBox = document.createElement('div');
+    alertBox.classList.add('alert');
+    const message = document.createElement('p');
+    message.textContent = 'Transaction hash: ' + txHash;
+    alertBox.appendChild(message);
+    const copyButton = document.createElement('button');
+    copyButton.textContent = 'Copy';
+    copyButton.addEventListener('click', () => {
+      navigator.clipboard.writeText(txHash);
+    });
+    alertBox.appendChild(copyButton);
+    document.body.appendChild(alertBox);
+  } catch (error) {
+    console.error('An error occurred:', error);
+  }
 });
 
 async function getAccount() {
-  accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+  try {
+    const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+  } catch (error) {
+    console.error('An error occurred:', error);
+  }
 }
+
+const dataInput = document.getElementById('text');
+const hashIpfs = document.getElementById('hash_ipfs')
+const charCounter = document.getElementById('charCounter');
+
+function updateCharCounter() {
+  const ipfsLinkLength = hashIpfs.textContent.length;
+  const currentCharCount = dataInput.value.length + ipfsLinkLength;
+  charCounter.textContent = `${currentCharCount} / ${maxDataSize} символов`;
+}
+
+
+dataInput.addEventListener('input', updateCharCounter);
+updateCharCounter();
 </script>
 {% endblock %}

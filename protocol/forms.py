@@ -1,6 +1,7 @@
 from django import forms
 
 from protocol.models import Transaction, MetamaskAccount, IPFS
+from protocol.validators import validate_file_size, validate_file_type, validate_file_content
 
 
 class CreateTextTransForm(forms.ModelForm):
@@ -25,6 +26,14 @@ class IPFSTransForm(forms.ModelForm):
     class Meta:
         model = IPFS
         fields = ('file', 'text',)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['file'].validators.extend([
+            validate_file_size,
+            validate_file_type,
+            validate_file_content
+        ])
 
 
 
