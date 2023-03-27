@@ -42,6 +42,11 @@ def ipfs_trans(request):
     return render(request, 'protocol/ipfs_trans.html', context={'index': index, 'form': form, 'data_url': data_url})
 
 
+def about(request):
+    index = IndexInfo.objects.all()[0]
+    return render(request, 'protocol/about.html', context={'index': index})
+
+
 class UpdateHashTransaction(APIView):
     def post(self, request, *args, **kwargs):
         transaction = Transaction.objects.get(id=request.data.get('id'))
