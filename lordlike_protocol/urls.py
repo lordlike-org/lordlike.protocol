@@ -25,11 +25,11 @@ from web3auth import urls as web3auth_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('protocol/', include('protocol.urls')),
+    path('', include('protocol.urls')),
     # path('w3/', include('w3.urls')),
     url(r'^auth/', include('djoser.urls')),
     url(r'^auth-token/', include('djoser.urls.authtoken')),
-    url(r'^', include(web3auth_urls)),
+    url(r'^', include('web3auth.urls')),
     # *staticfiles_urlpatterns(),
     # *static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
