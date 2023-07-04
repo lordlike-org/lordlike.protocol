@@ -34,9 +34,6 @@
               <button type="submit" class="btn btn-outline-primary">Create</button>
             </div>
             <hr>
-            <div class="form-group">
-                  <div id="recaptcha" class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
-                </div>
           </form>
           <hr>
           <div class="text-center">
@@ -181,9 +178,8 @@ sendEthButton.addEventListener('click', async () => {
     });
 
     const txHash = txResponse.result;
-    console.log(txHash);
 
-    const response2 = await fetch(`${window.location.origin}/blog/create/ipfs/data/`, {
+    const response2 = await fetch(`${window.location.origin}/create/ipfs/data/`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

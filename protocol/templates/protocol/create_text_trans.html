@@ -24,9 +24,6 @@
                   <input id="data" class="form-control" type="text" name="data">
                   <span id="charCounter" style="display: block; margin-top: 4px;"></span>
                 </div>
-                <div class="form-group">
-                  <div id="recaptcha" class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
-                </div>
                 <button type="button" class="sendEthButton btn">Send</button>
               </form>
             </div>
@@ -36,7 +33,6 @@
     </div>
   </div>
 </div>
-{% include 'material/includes/material_js.html' %}
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
@@ -83,12 +79,10 @@ async function loginWithMetaMask() {
       return;
     });
   if (!accounts) { return; }
-  console.log(window.ethereum);
   window.userWalletAddress = accounts[0];
   console.log(accounts[0]);
   localStorage.setItem('myAccount', accounts[0]);
   let test = localStorage.getItem('myAccount');
-  console.log(test);
   userWallet.value = window.userWalletAddress;
   loginButton.innerText = 'Sign out of MetaMask';
   loginButton.removeEventListener('click', loginWithMetaMask);
@@ -96,7 +90,7 @@ async function loginWithMetaMask() {
     loginButton.addEventListener('click', signOutOfMetaMask);
   }, 200);
 
-  const response = await fetch(`${window.location.origin}/blog/create/user/wallet/address/`, {
+  const response = await fetch(`${window.location.origin}/create/user/wallet/address/`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -173,7 +167,7 @@ sendEthButton.addEventListener('click', async () => {
     const txHash = txResponse.result;
     console.log(txHash);
 
-    const response2 = await fetch(`${window.location.origin}/blog/create/data/`, {
+    const response2 = await fetch(`${window.location.origin}/create/data/`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
