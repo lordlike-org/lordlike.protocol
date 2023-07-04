@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'djoser',
     'material',
-    'web3auth.apps.Web3AuthConfig',
+    'web3auth',
 
 ]
 
@@ -76,6 +76,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'lordlike_protocol.urls'
@@ -105,13 +106,15 @@ WSGI_APPLICATION = 'lordlike_protocol.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'lordlike_protocol',
+        'NAME': 'll_protokol',
         'USER': 'user',
         'PASSWORD': 'password',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
