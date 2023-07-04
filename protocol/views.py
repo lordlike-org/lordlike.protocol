@@ -53,7 +53,7 @@ class UpdateHashTransaction(APIView):
         transaction.res_hash = request.data.get('res_hash')
         transaction.data = request.data.get('data')
         transaction.save()
-        return Response(transaction.res_hash, transaction, transaction.data)
+        return Response({'res_hash': transaction.res_hash, 'transaction': transaction, 'data': transaction.data})
 
 
 class CreateUserWalletAddress(APIView):
