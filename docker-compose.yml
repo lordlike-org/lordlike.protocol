@@ -13,7 +13,7 @@ services:
     env_file:
       - ./conf/postgres.env
   db:
-    image: dariri/hello-world:latest
+    image: dariri/lordlike_protocol:latest
     networks:
       - local-protocol-network
     ports:
