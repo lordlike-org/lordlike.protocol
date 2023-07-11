@@ -8,3 +8,7 @@ web3==5.30.0
 requests==2.28.1
 django-web3-auth
 pypdf2~=3.0.1
+django
+django-widget-tweaks
+django-cors-headers
+material
