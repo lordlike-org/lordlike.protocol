@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7ebad15-7999-41a0-9aa3-ba40d36717cb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/postgres.env" beforeDir="false" afterPath="$PROJECT_DIR$/conf/postgres.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/protocol/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/protocol/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/templates/protocol/content.html" beforeDir="false" afterPath="$PROJECT_DIR$/protocol/templates/protocol/content.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +75,7 @@
       <workItem from="1688903691627" duration="2323000" />
       <workItem from="1689069933154" duration="1188000" />
       <workItem from="1689257131512" duration="403000" />
-      <workItem from="1689792271991" duration="2850000" />
+      <workItem from="1689792271991" duration="4751000" />
     </task>
     <task id="LOCAL-00001" summary="update settings">
       <created>1688973591153</created>
@@ -94,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688973624004</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update">
+      <created>1689796309399</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1689796309399</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +106,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="update settings" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>
