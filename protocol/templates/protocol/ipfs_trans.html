@@ -4,47 +4,47 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-8 mx-auto">
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title text-center">Connect Wallet</h4>
-          <div class="text-center mb-4">
-            <button id='loginButton' onclick="" class="btn btn-primary">Login with MetaMask</button>
-          </div>
+      <div class="card" style="border: none;">
+        <div class="card-body" style="padding-left: 10px;">
+          <h4 style="font-size: medium">Connect Wallet</h4>
+          <br>
+          <div class="col s12 center-align mb-4" style="border: none;padding-left: 1px;">
+              <button id="loginButton" onclick="" class="btn btn-primary">Login with MetaMask</button>
+            </div>
+          <h4 style="font-size: medium">Create IPFS transaction</h4>
           <hr>
           <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-group">
-              <label for="file" style="color: #2B333F;"><h4>Photo</h4></label>
+              <label for="file">Add photo</label>
               {{form.file|add_class:'form-control'}}
             </div>
-            <hr>
-
             <div class="form-group">
-              <label for="text" style="color: #2B333F;"><h4>Text</h4></label>
-              <input id="text" class="form-control" type="text" name="text">
-              <span id="charCounter" style="display: block; margin-top: 4px;"></span>
+              <label for="hash_ipfs" style="color: #2B333F;">IPFS</label>
+              <div>Your ipfs url: {{ data_url }}</div>
             </div>
-            <hr>
+            <div class="card-body" style="border: none; padding-left: 1px;">
+              <button type="submit" class="btn btn-primary" style="border: none;">Create</button>
+            </div>
             <div class="form-group">
-              <label for="hash_ipfs" style="color: #2B333F;"><h4>IPFS</h4></label>
-              <h3 id="hash_ipfs" class="mb-0">{{ data_url }}</h3>
+                <label for="data">Your text</label>
+                <textarea id="data" class="form-control" rows="4" name="data"></textarea>
+                <span id="charCounter" style="display: block; margin-top: 4px;"></span>
             </div>
-            <hr>
-            <div class="text-center">
-              <button type="submit" class="btn btn-outline-primary">Create</button>
-            </div>
-            <hr>
           </form>
-          <hr>
-          <div class="text-center">
-            <h4>Send Transaction</h4>
-            <button class="sendEthButton btn btn-primary">Send</button>
-          </div>
+
+            <h4 style="font-size: medium">Send Transaction</h4>
+          <div class="form-group mt-4">
+                    <button type="button" class="sendEthButton btn btn-primary">Send</button>
+                </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <script>
