@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b7ebad15-7999-41a0-9aa3-ba40d36717cb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/protocol/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protocol/templates/protocol/create_text_trans.html" beforeDir="false" afterPath="$PROJECT_DIR$/protocol/templates/protocol/create_text_trans.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protocol/templates/protocol/ipfs_trans.html" beforeDir="false" afterPath="$PROJECT_DIR$/protocol/templates/protocol/ipfs_trans.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +78,9 @@
       <workItem from="1688903691627" duration="2323000" />
       <workItem from="1689069933154" duration="1188000" />
       <workItem from="1689257131512" duration="403000" />
-      <workItem from="1689792271991" duration="4751000" />
+      <workItem from="1689792271991" duration="8605000" />
+      <workItem from="1690185799119" duration="1000" />
+      <workItem from="1691518335642" duration="4098000" />
     </task>
     <task id="LOCAL-00001" summary="update settings">
       <created>1688973591153</created>
@@ -98,15 +103,30 @@
       <option name="project" value="LOCAL" />
       <updated>1689796309399</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add clickability of closing hamburger in mobile version">
+      <created>1689857541653</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1689857541653</updated>
+    </task>
+    <task id="LOCAL-00005" summary="update settings">
+      <created>1689857560600</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1689857560600</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update settings" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="add clickability of closing hamburger in mobile version" />
+    <MESSAGE value="update settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="update settings" />
   </component>
 </project>
