@@ -64,6 +64,10 @@ window.userWalletAddress = null;
 const loginButton = document.getElementById('loginButton');
 const userWallet = document.getElementById('user_wallet_address');
 
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 function toggleButton() {
   if (!window.ethereum) {
     if (isMobile()) {
