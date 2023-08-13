@@ -72,14 +72,24 @@ window.userWalletAddress = null;
 const loginButton = document.getElementById('loginButton');
 const userWallet = document.getElementById('user_wallet_address');
 
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 function toggleButton() {
   if (!window.ethereum) {
-    loginButton.innerText = 'MetaMask is not installed';
-    loginButton.classList.remove('bg-purple-500', 'text-white');
-    loginButton.classList.add('bg-gray-500', 'text-gray-100', 'cursor-not-allowed');
+    if (isMobile()) {
+        loginButton.innerText = 'Open in MetaMask App';
+        loginButton.addEventListener('click', () => {
+            window.location.href = `https://metamask.app.link/dapp/${window.location.hostname}`;
+        });
+    } else {
+        loginButton.innerText = 'MetaMask is not installed';
+        loginButton.classList.remove('bg-purple-500', 'text-white');
+        loginButton.classList.add('bg-gray-500', 'text-gray-100', 'cursor-not-allowed');
+    }
     return false;
   }
-
   loginButton.addEventListener('click', loginWithMetaMask);
 }
 

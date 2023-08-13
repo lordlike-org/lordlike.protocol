@@ -88,7 +88,7 @@
       <workItem from="1689792271991" duration="8605000" />
       <workItem from="1690185799119" duration="1000" />
       <workItem from="1691518335642" duration="4914000" />
-      <workItem from="1691946925694" duration="848000" />
+      <workItem from="1691946925694" duration="1251000" />
     </task>
     <task id="LOCAL-00001" summary="update settings">
       <created>1688973591153</created>
@@ -153,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691947859212</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added mobile version metamask connection">
+      <created>1691948032793</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1691948032793</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
