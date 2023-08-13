@@ -69,7 +69,7 @@ function toggleButton() {
     if (isMobile()) {
         loginButton.innerText = 'Open in MetaMask App';
         loginButton.addEventListener('click', () => {
-            window.location.href = 'ethereum:';
+            window.location.href = `https://metamask.app.link/dapp/${window.location.hostname}`;
         });
     } else {
         loginButton.innerText = 'MetaMask is not installed';
@@ -80,6 +80,7 @@ function toggleButton() {
   }
   loginButton.addEventListener('click', loginWithMetaMask);
 }
+
 
 
 async function loginWithMetaMask() {
