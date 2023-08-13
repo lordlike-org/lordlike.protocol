@@ -4,8 +4,8 @@ from django.db import models
 class IndexInfo(models.Model):
     objects = None
     phone = models.CharField(max_length=250)
-    facebook = models.CharField(max_length=250)
-    instagram = models.CharField(max_length=250)
+    telegram = models.CharField(max_length=250)
+    twitter = models.CharField(max_length=250)
 
 
 class MetamaskAccount(models.Model):
