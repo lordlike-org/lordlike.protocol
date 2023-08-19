@@ -12,3 +12,5 @@ django
 django-widget-tweaks
 django-cors-headers
 material
+
+python-magic~=0.4.27
