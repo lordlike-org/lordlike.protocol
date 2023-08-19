@@ -1,14 +1,12 @@
 from django.core.exceptions import ValidationError
 from PIL import Image
-import io
-import PyPDF2
 import os
 
 
 def validate_file_size(value):
-    max_file_size = 10485760  # 10MB
+    max_file_size = 1073741824  # 1000MB
     if value.size > max_file_size:
-        raise ValidationError(f"Файл слишком большой. Максимальный размер файла: {max_file_size // 1048576}MB.")
+        raise ValidationError(f"The file is too large. Maximum file size: {max_file_size // 1073741824}MB.")
 
 
 def validate_file_type(value):
@@ -16,7 +14,7 @@ def validate_file_type(value):
     ext = value.name.split('.')[-1]
     if ext.lower() not in allowed_extensions:
         raise ValidationError(
-            f"Недопустимый тип файла. Разрешены следующие типы файлов: {', '.join(allowed_extensions)}")
+            f"The file is not supported. Only files allowed: {', '.join(allowed_extensions)}")
 
 
 def validate_file_content(value):
@@ -24,24 +22,14 @@ def validate_file_content(value):
 
     if file_extension in ['.jpg', '.jpeg', '.png']:
         try:
-            # Загрузка изображения из файла с помощью Pillow
             image = Image.open(value)
-            # Проверка, является ли файл действительным изображением
             image.verify()
-            # Если проверка прошла успешно, закройте файл
             value.seek(0)
         except Exception as e:
-            raise ValidationError(f"Ошибка при чтении файла изображения: {e}")
+            raise ValidationError(f"Error while reading image file: {e}")
     elif file_extension == '.pdf':
-        try:
-            # Загрузка PDF-файла с помощью PyPDF2
-            reader = PyPDF2.PdfFileReader(value)
-            # Проверка, является ли файл действительным PDF-файлом
-            if not reader.getIsEncrypted() and reader.getNumPages() > 0:
-                value.seek(0)
-            else:
-                raise ValidationError("Файл PDF поврежден или зашифрован.")
-        except Exception as e:
-            raise ValidationError(f"Ошибка при чтении файла PDF: {e}")
+        if not value.read(4) == b"%PDF":
+            raise ValidationError("The file is not a valid PDF.")
+        value.seek(0)
     else:
-        raise ValidationError("Файл не поддерживается. Разрешены только файлы 'jpg', 'jpeg', 'png' и 'pdf'.")
+        raise ValidationError("The file is not supported. Only files allowed 'jpg', 'jpeg', 'png' и 'pdf'.")
