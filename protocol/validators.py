@@ -4,9 +4,9 @@ import os
 
 
 def validate_file_size(value):
-    max_file_size = 1073741824  # 1000MB
+    max_file_size = 314572800  # 1000MB
     if value.size > max_file_size:
-        raise ValidationError(f"The file is too large. Maximum file size: {max_file_size // 1073741824}MB.")
+        raise ValidationError(f"The file is too large. Maximum file size: {max_file_size // 314572800}MB.")
 
 
 def validate_file_type(value):
