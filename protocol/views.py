@@ -1,4 +1,5 @@
 import requests
+from django.contrib import messages
 from django.contrib.sites.models import Site
 from django.shortcuts import render
 from rest_framework.response import Response
@@ -26,18 +27,25 @@ def create_text_trans(request):
 def ipfs_trans(request):
     index = IndexInfo.objects.all()[0]
     data_url = ''
+
     if request.method == "POST":
         form = IPFSTransForm(request.POST, request.FILES)
+
         if form.is_valid():
-            inst = form.save(commit=False)
-            inst.save()
-            files = {
-                'file': bytes(inst.file.read())
-            }
-            response = requests.post('https://ipfs.infura.io:5001/api/v0/add', files=files,
-                                     auth=('29QAqPI0HxrbfPWaTYotMnpdyho', 'a1d30f9c414e15aa990a140ac924f33b'))
-            data_url = 'https://ipfs.io/ipfs/' + response.json().get('Hash')
-            IPFS.objects.filter().update(hash_ipfs=response.json().get('Hash'))
+            # Проверка на наличие файла в запросе
+            if 'file' in request.FILES and request.FILES['file']:
+                inst = form.save(commit=False)
+                inst.save()
+                files = {
+                    'file': bytes(inst.file.read())
+                }
+                response = requests.post('https://ipfs.infura.io:5001/api/v0/add', files=files,
+                                         auth=('29QAqPI0HxrbfPWaTYotMnpdyho', 'a1d30f9c414e15aa990a140ac924f33b'))
+                data_url = 'https://ipfs.io/ipfs/' + response.json().get('Hash')
+                IPFS.objects.filter().update(hash_ipfs=response.json().get('Hash'))
+            else:
+                messages.error(request, 'Файл не был предоставлен.')
+
     form = IPFSTransForm()
     return render(request, 'protocol/ipfs_trans.html', context={'index': index, 'form': form, 'data_url': data_url})
 

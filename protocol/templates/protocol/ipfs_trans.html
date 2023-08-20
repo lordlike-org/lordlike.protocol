@@ -242,5 +242,12 @@ function updateCharCounter() {
 
 dataInput.addEventListener('input', updateCharCounter);
 updateCharCounter();
+document.querySelector('form').addEventListener('submit', function(e) {
+    if (!document.querySelector('input[type="file"]').files.length) {
+        alert('Пожалуйста, выберите файл перед отправкой.');
+        e.preventDefault();  // Prevent the form from submitting
+    }
+});
+
 </script>
 {% endblock %}
