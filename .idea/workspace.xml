@@ -29,8 +29,6 @@
       <change afterPath="$PROJECT_DIR$/images/Экзаменационная_работа_J0LZnj1.pdf" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/images/Экзаменационная_работа_o5GFNH9.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/templates/protocol/ipfs_trans.html" beforeDir="false" afterPath="$PROJECT_DIR$/protocol/templates/protocol/ipfs_trans.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/protocol/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +108,7 @@
       <workItem from="1690185799119" duration="1000" />
       <workItem from="1691518335642" duration="4914000" />
       <workItem from="1691946925694" duration="4746000" />
-      <workItem from="1692454098563" duration="4752000" />
+      <workItem from="1692454098563" duration="5581000" />
     </task>
     <task id="LOCAL-00001" summary="update settings">
       <created>1688973591153</created>
@@ -224,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692458086963</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="error handling when trying to resubmit the form in ipfs">
+      <created>1692541781923</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1692541781923</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +247,7 @@
     <MESSAGE value="update requirements" />
     <MESSAGE value="updated formats for uploading to ipfs" />
     <MESSAGE value="updated file size for uploading to ipfs" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated file size for uploading to ipfs" />
+    <MESSAGE value="error handling when trying to resubmit the form in ipfs" />
+    <option name="LAST_COMMIT_MESSAGE" value="error handling when trying to resubmit the form in ipfs" />
   </component>
 </project>

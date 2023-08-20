@@ -20,8 +20,8 @@
               {{form.file|add_class:'form-control'}}
             </div>
             <div class="form-group">
-              <label for="hash_ipfs" style="color: #2B333F;">IPFS</label>
-              <div>Your ipfs url: {{ data_url }}</div>
+                <label for="hash_ipfs" style="color: #2B333F;">IPFS</label>
+                <div>Your ipfs url: <a href="{{ data_url }}" target="_blank">{{ data_url }}</a></div>
             </div>
             <div class="card-body" style="border: none; padding-left: 1px;">
               <button type="submit" class="btn btn-primary" style="border: none;">Create</button>
