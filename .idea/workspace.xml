@@ -1,91 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7ebad15-7999-41a0-9aa3-ba40d36717cb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/images/Darina_NIT_project.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/logo1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/lordlike_photo.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/photo_2023-02-25_16.56.58.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/photo_2023-02-25_16.56.58_8ywhaEu.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/photo_2023-02-25_16.56.58_Ia393AZ.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/photo_2023-02-25_16.56.58_YtjR7EV.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/Chinese.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/English.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/French.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/German.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/Italian.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/Japanese.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/Lithuanian.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/Swedish.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/Ukrainian.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/blog_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/blog_10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/blog_11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/blog_12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/blog_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/blog_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/blog_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/blog_5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/blog_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/blog_7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/blog_8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/blog_9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/blog_author.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/blog_background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/blog_post_image.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/cert.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/course_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/course_10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/course_11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/course_12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/course_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/course_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/course_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/course_5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/course_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/course_7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/course_8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/course_9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/event_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/event_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/event_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/index_background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/instructor_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/instructor_10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/instructor_11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/instructor_12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/instructor_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/instructor_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/instructor_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/instructor_5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/instructor_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/instructor_7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/instructor_8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/instructor_9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/instructors_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/intro.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/intro_user.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/local_phone.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/local_post_office.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/marker.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/member_0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/member_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/member_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/member_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/member_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/member_5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/member_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/member_7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/member_8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/member_9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/place.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/play_big.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/review_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/schedule.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/video.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/templates/protocol/ipfs_trans.html" beforeDir="false" afterPath="$PROJECT_DIR$/protocol/templates/protocol/ipfs_trans.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protocol/validators.py" beforeDir="false" afterPath="$PROJECT_DIR$/protocol/validators.py" afterDir="false" />
+    <list default="true" id="b7ebad15-7999-41a0-9aa3-ba40d36717cb" name="Changes" comment="fixed file size for ipfs">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protocol/static/template/images/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/protocol/static/template/images/favicon.ico" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,6 +40,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/venv/lib/python3.9/site-packages/magic/loader.py" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="lordlike.protocol" type="Python.DjangoServer" factoryName="Django server">
@@ -167,7 +90,7 @@
       <workItem from="1691946925694" duration="4746000" />
       <workItem from="1692454098563" duration="6875000" />
       <workItem from="1692982732943" duration="3462000" />
-      <workItem from="1693753459080" duration="3449000" />
+      <workItem from="1693753459080" duration="5041000" />
     </task>
     <task id="LOCAL-00001" summary="update settings">
       <created>1688973591153</created>
@@ -302,7 +225,21 @@
       <option name="project" value="LOCAL" />
       <updated>1693759860791</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="added hints for ipfs transactions">
+      <created>1693759918354</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1693759918354</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fixed file size for ipfs">
+      <created>1693759955352</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1693759955352</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,6 +260,8 @@
     <MESSAGE value="error handling when trying to resubmit the form in ipfs" />
     <MESSAGE value="added clickability ipfs links" />
     <MESSAGE value="icon added" />
-    <option name="LAST_COMMIT_MESSAGE" value="icon added" />
+    <MESSAGE value="added hints for ipfs transactions" />
+    <MESSAGE value="fixed file size for ipfs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed file size for ipfs" />
   </component>
 </project>
