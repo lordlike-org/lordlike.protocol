@@ -10,14 +10,16 @@
           <br>
           <div class="col s12 center-align mb-4" style="border: none;padding-left: 1px;">
               <button id="loginButton" onclick="" class="btn btn-primary">Login with MetaMask</button>
-            </div>
+              <small class="form-text text-muted">Connect MetaMask wallet</small>
+          </div>
           <h4 style="font-size: medium">Create IPFS transaction</h4>
           <hr>
           <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-group">
-              <label for="file">Add photo</label>
+              <label for="file">Add photo <span class="text-muted">(Maximum size: 300 МБ)</span></label>
               {{form.file|add_class:'form-control'}}
+              <small class="form-text text-muted">Select file formats: jpg, jpeg, png, pdf</small>
             </div>
             <div class="form-group">
                 <label for="hash_ipfs" style="color: #2B333F;">IPFS</label>
@@ -25,9 +27,10 @@
             </div>
             <div class="card-body" style="border: none; padding-left: 1px;">
               <button type="submit" class="btn btn-primary" style="border: none;">Create</button>
+              <small class="form-text text-muted">After pressing the Create button, your IPFS link will be generated</small>
             </div>
             <div class="form-group">
-                <label for="data">Your text</label>
+                <label for="data">Your text <span class="text-muted">(Write a comment for the IPFS link to send to the Ethereum blockchain)</span></label>
                 <textarea id="data" class="form-control" rows="4" name="data"></textarea>
                 <span id="charCounter" style="display: block; margin-top: 4px;"></span>
             </div>
@@ -36,6 +39,7 @@
             <h4 style="font-size: medium">Send Transaction</h4>
           <div class="form-group mt-4">
                     <button type="button" class="sendEthButton btn btn-primary">Send</button>
+                    <small class="form-text text-muted">Send the transaction</small>
                 </div>
         </div>
       </div>
@@ -235,8 +239,9 @@ const charCounter = document.getElementById('charCounter');
 
 function updateCharCounter() {
   const ipfsLinkLength = hashIpfs.textContent.length;
+  console.log(ipfsLinkLength)
   const currentCharCount = dataInput.value.length + ipfsLinkLength;
-  charCounter.textContent = `${currentCharCount} / ${maxDataSize} символов`;
+  charCounter.textContent = `${currentCharCount} / ${maxDataSize} symbols`;
 }
 
 
@@ -244,10 +249,9 @@ dataInput.addEventListener('input', updateCharCounter);
 updateCharCounter();
 document.querySelector('form').addEventListener('submit', function(e) {
     if (!document.querySelector('input[type="file"]').files.length) {
-        alert('Пожалуйста, выберите файл перед отправкой.');
-        e.preventDefault();  // Prevent the form from submitting
+        alert('Please select a file before submitting.');
+        e.preventDefault();
     }
 });
-
 </script>
 {% endblock %}
