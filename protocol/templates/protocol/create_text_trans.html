@@ -11,6 +11,7 @@
           <div class="row" style="padding-left: 10px; border: none;">
             <div class="col s12 center-align mb-4" style="border: none;">
               <button id="loginButton" onclick="" class="btn btn-primary">Login with MetaMask</button>
+                <small class="form-text text-muted">Connect MetaMask wallet</small>
             </div>
           </div>
           <div class="row" style="padding-left: 10px; border: none;">
@@ -20,13 +21,14 @@
               <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="data">Text</label>
+                <label for="data">Your text <span class="text-muted">(Write a comment to send to the Ethereum blockchain)</span></label>
                     <textarea id="data" class="form-control" rows="4" name="data"></textarea>
                     <span id="charCounter" style="display: block; margin-top: 4px;"></span>
                 </div>
 
                 <div class="form-group mt-5">
                     <button type="button" class="sendEthButton btn btn-primary">Send</button>
+                    <small class="form-text text-muted">Send the transaction</small>
                 </div>
               </form>
             </div>
