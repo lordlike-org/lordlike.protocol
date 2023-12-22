@@ -1,4 +1,5 @@
-django==3.2.9
+Django>=3.2.23
+django>=3.2.23
 pillow>=10.0.1
 psycopg2-binary
 djoser
