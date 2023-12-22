@@ -1,5 +1,5 @@
 django==3.2.9
-pillow~=9.2.0
+pillow>=10.0.1
 psycopg2-binary
 djoser
 django-haystack==3.1.1

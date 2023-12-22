@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7ebad15-7999-41a0-9aa3-ba40d36717cb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/protocol/templates/protocol/create_text_trans.html" beforeDir="false" afterPath="$PROJECT_DIR$/protocol/templates/protocol/create_text_trans.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +89,7 @@
       <workItem from="1691946925694" duration="4746000" />
       <workItem from="1692454098563" duration="6875000" />
       <workItem from="1692982732943" duration="3462000" />
-      <workItem from="1693753459080" duration="5866000" />
+      <workItem from="1693753459080" duration="6527000" />
     </task>
     <task id="LOCAL-00001" summary="update settings">
       <created>1688973591153</created>
@@ -266,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693761933356</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="added hints for sending a text transaction to the blockchain">
+      <created>1693762593352</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1693762593352</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,6 +298,7 @@
     <MESSAGE value="fixed file size for ipfs" />
     <MESSAGE value="added icon" />
     <MESSAGE value="correct some title" />
-    <option name="LAST_COMMIT_MESSAGE" value="correct some title" />
+    <MESSAGE value="added hints for sending a text transaction to the blockchain" />
+    <option name="LAST_COMMIT_MESSAGE" value="added hints for sending a text transaction to the blockchain" />
   </component>
 </project>
